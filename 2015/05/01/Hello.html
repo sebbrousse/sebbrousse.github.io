@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://sebbrousse.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//sebbrousse.github.io/themes/casper/assets/css/screen.css?v=1496766513651" />
+    <link rel="stylesheet" type="text/css" href="//sebbrousse.github.io/themes/casper/assets/css/screen.css?v=1496769567471" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://sebbrousse.github.io/2015/05/01/Hello.html" />
@@ -21,12 +21,12 @@
     <meta property="og:site_name" content="" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Hello" />
-    <meta property="og:description" content="Hello Hello italic phrase italic letters bold phrase bold letters bold italic phrase bold italic letters monospace phrase and letters monospace italic phrase and letters monospace bold phrase and letters monospace bold italic phrase and letters" />
+    <meta property="og:description" content="Hello Hello italic phrase italic letters bold phrase bold letters bold italic phrase bold italic letters monospace phrase and letters monospace italic phrase and letters monospace bold phrase and letters monospace bold italic phrase and letters package org.neo4j.examples; import org.junit.Test; import org.neo4j.kernel.impl.annotations." />
     <meta property="og:url" content="https://sebbrousse.github.io/2015/05/01/Hello.html" />
     <meta property="article:published_time" content="2015-05-01T00:00:00.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Hello" />
-    <meta name="twitter:description" content="Hello Hello italic phrase italic letters bold phrase bold letters bold italic phrase bold italic letters monospace phrase and letters monospace italic phrase and letters monospace bold phrase and letters monospace bold italic phrase and letters" />
+    <meta name="twitter:description" content="Hello Hello italic phrase italic letters bold phrase bold letters bold italic phrase bold italic letters monospace phrase and letters monospace italic phrase and letters monospace bold phrase and letters monospace bold italic phrase and letters package org.neo4j.examples; import org.junit.Test; import org.neo4j.kernel.impl.annotations." />
     <meta name="twitter:url" content="https://sebbrousse.github.io/2015/05/01/Hello.html" />
     
     <script type="application/ld+json">
@@ -43,7 +43,7 @@
     "headline": "Hello",
     "url": "https://sebbrousse.github.io/2015/05/01/Hello.html",
     "datePublished": "2015-05-01T00:00:00.000Z",
-    "description": "Hello Hello italic phrase italic letters bold phrase bold letters bold italic phrase bold italic letters monospace phrase and letters monospace italic phrase and letters monospace bold phrase and letters monospace bold italic phrase and letters"
+    "description": "Hello Hello italic phrase italic letters bold phrase bold letters bold italic phrase bold italic letters monospace phrase and letters monospace italic phrase and letters monospace bold phrase and letters monospace bold italic phrase and letters package org.neo4j.examples; import org.junit.Test; import org.neo4j.kernel.impl.annotations."
 }
     </script>
 
@@ -112,6 +112,84 @@
 <div class="paragraph">
 <p><code><strong><em>monospace bold italic phrase</em></strong></code> and le<code><strong><em>tt</em></strong></code>ers</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">package org.neo4j.examples;
+
+import org.junit.Test;
+
+import org.neo4j.kernel.impl.annotations.Documented;
+import org.neo4j.test.GraphDescription.Graph;
+
+import static org.neo4j.visualization.asciidoc.AsciidocHelper.createGraphVizWithNodeId;
+import static org.neo4j.visualization.asciidoc.AsciidocHelper.createOutputSnippet;
+
+public class DocumentationDocTest extends ImpermanentGraphJavaDocTestBase
+{
+    /**
+     * This is a sample documentation test, demonstrating different ways of
+     * bringing code and other artifacts into Asciidoc form. The title of the
+     * generated document is determined from the method name, replacing "+_+" with
+     * " ".
+     *
+     * Below you see a number of different ways to generate text from source,
+     * inserting it into the JavaDoc documentation (really being Asciidoc markup)
+     * via the snippet markers (see below) and programmatic adding with runtime data
+     * in the Java code.
+     *
+     * - The annotated graph as http://www.graphviz.org/[GraphViz]-generated visualization:
+     *
+     * @@graph
+     *
+     * - A sample Cypher query:
+     *
+     * @@cypher
+     *
+     * - A sample text output snippet:
+     *
+     * @@output
+     *
+     * - a generated source link to the original GIThub source for this test:
+     *
+     * @@github
+     *
+     * - The full source for this example as a source snippet, highlighted as Java code:
+     *
+     * @@sampleDocumentation
+     *
+     * This is the end of this chapter.
+     */
+    @Test
+    // signaling this to be a documentation test
+    @Documented
+    // the graph data setup as simple statements
+    @Graph( "I know you" )
+    // title is determined from the method name
+    public void hello_world_Sample_Chapter()
+    {
+        // initialize the graph with the annotation data
+        data.get();
+        gen.get().addTestSourceSnippets( this.getClass(), "sampleDocumentation" );
+        gen.get()
+                .addGithubTestSourceLink( "github", this.getClass(),
+                        "community/embedded-examples" );
+
+        gen.get().addSnippet( "output",
+                createOutputSnippet( "Hello graphy world!" ) );
+
+        gen.get().addSnippet(
+                "graph",
+                createGraphVizWithNodeId( "Hello World Graph", graphdb(),
+                        gen.get().getTitle() ) );
+        // A cypher snippet referring to the generated graph in the start clause
+        gen.get().addSnippet(
+                "cypher",
+                createCypherSnippet( "start n = node(" + data.get().get( "I" ).getId()
+                                     + ") return n" ) );
+    }
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -137,15 +215,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Hello&amp;url=https://sebbrousse.github.io/"
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Hello&amp;url=https://sebbrousse.github.io/2015/05/01/Hello.html"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://sebbrousse.github.io/"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://sebbrousse.github.io/2015/05/01/Hello.html"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://sebbrousse.github.io/"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://sebbrousse.github.io/2015/05/01/Hello.html"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -186,8 +264,8 @@
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//sebbrousse.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1496766513651"></script>
-    <script type="text/javascript" src="//sebbrousse.github.io/themes/casper/assets/js/index.js?v=1496766513651"></script>
+    <script type="text/javascript" src="//sebbrousse.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1496769567471"></script>
+    <script type="text/javascript" src="//sebbrousse.github.io/themes/casper/assets/js/index.js?v=1496769567471"></script>
 
 </body>
 </html>

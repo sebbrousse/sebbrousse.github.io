@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://sebbrousse.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 06 Jun 2017 16:28:33 GMT</lastBuildDate><atom:link href="https://sebbrousse.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Hello]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://sebbrousse.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 06 Jun 2017 17:19:27 GMT</lastBuildDate><atom:link href="https://sebbrousse.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Hello]]></title><description><![CDATA[<div class="paragraph">
 <p>Je m&#8217;appelle</p>
 </div>]]></description><link>https://sebbrousse.github.io/2015/05/04/Hello.html</link><guid isPermaLink="true">https://sebbrousse.github.io/2015/05/04/Hello.html</guid><dc:creator><![CDATA[Sebastien Brousse]]></dc:creator><pubDate>Mon, 04 May 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Hello]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_hello">Hello</h2>
@@ -34,6 +34,84 @@
 </div>
 <div class="paragraph">
 <p><code><strong><em>monospace bold italic phrase</em></strong></code> and le<code><strong><em>tt</em></strong></code>ers</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">package org.neo4j.examples;
+
+import org.junit.Test;
+
+import org.neo4j.kernel.impl.annotations.Documented;
+import org.neo4j.test.GraphDescription.Graph;
+
+import static org.neo4j.visualization.asciidoc.AsciidocHelper.createGraphVizWithNodeId;
+import static org.neo4j.visualization.asciidoc.AsciidocHelper.createOutputSnippet;
+
+public class DocumentationDocTest extends ImpermanentGraphJavaDocTestBase
+{
+    /**
+     * This is a sample documentation test, demonstrating different ways of
+     * bringing code and other artifacts into Asciidoc form. The title of the
+     * generated document is determined from the method name, replacing "+_+" with
+     * " ".
+     *
+     * Below you see a number of different ways to generate text from source,
+     * inserting it into the JavaDoc documentation (really being Asciidoc markup)
+     * via the snippet markers (see below) and programmatic adding with runtime data
+     * in the Java code.
+     *
+     * - The annotated graph as http://www.graphviz.org/[GraphViz]-generated visualization:
+     *
+     * @@graph
+     *
+     * - A sample Cypher query:
+     *
+     * @@cypher
+     *
+     * - A sample text output snippet:
+     *
+     * @@output
+     *
+     * - a generated source link to the original GIThub source for this test:
+     *
+     * @@github
+     *
+     * - The full source for this example as a source snippet, highlighted as Java code:
+     *
+     * @@sampleDocumentation
+     *
+     * This is the end of this chapter.
+     */
+    @Test
+    // signaling this to be a documentation test
+    @Documented
+    // the graph data setup as simple statements
+    @Graph( "I know you" )
+    // title is determined from the method name
+    public void hello_world_Sample_Chapter()
+    {
+        // initialize the graph with the annotation data
+        data.get();
+        gen.get().addTestSourceSnippets( this.getClass(), "sampleDocumentation" );
+        gen.get()
+                .addGithubTestSourceLink( "github", this.getClass(),
+                        "community/embedded-examples" );
+
+        gen.get().addSnippet( "output",
+                createOutputSnippet( "Hello graphy world!" ) );
+
+        gen.get().addSnippet(
+                "graph",
+                createGraphVizWithNodeId( "Hello World Graph", graphdb(),
+                        gen.get().getTitle() ) );
+        // A cypher snippet referring to the generated graph in the start clause
+        gen.get().addSnippet(
+                "cypher",
+                createCypherSnippet( "start n = node(" + data.get().get( "I" ).getId()
+                                     + ") return n" ) );
+    }
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
