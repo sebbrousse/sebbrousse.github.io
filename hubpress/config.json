@@ -29,13 +29,13 @@
     "stackoverflow": ""
   },
   "theme": {
-    "name": "casper",
+    "name": "saga",
     "url": "//sebbrousse.github.io/themes/uno"
   },
   "urls": {
     "site": "https://sebbrousse.github.io",
     "hubpress": "http://sebbrousse.github.io",
-    "theme": "//sebbrousse.github.io/themes/saga",
+    "theme": "//sebbrousse.github.io/themes/casper",
     "images": "https://sebbrousse.github.io/images"
   },
   "initialisationConfigComponent": {
