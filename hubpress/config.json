@@ -2,14 +2,34 @@
   "meta": {
     "username": "sebbrousse",
     "repositoryName": "sebbrousse.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "site": {
-    "url": "https://sebbrousse.github.io"
+    "url": "https://sebbrousse.github.io",
+    "title": "",
+    "description": "",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "",
+    "github": "",
+    "twitter": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
+  },
   "theme": {
-    "name": "uno",
+    "name": "saga",
     "url": "//sebbrousse.github.io/themes/uno"
   },
   "urls": {
