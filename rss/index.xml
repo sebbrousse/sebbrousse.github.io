@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://sebbrousse.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 06 Jun 2017 16:25:29 GMT</lastBuildDate><atom:link href="https://sebbrousse.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Hello]]></title><description><![CDATA[<div class="paragraph">
+<p>Je m&#8217;appelle</p>
+</div>]]></description><link>https://sebbrousse.github.io/2015/05/04/Hello.html</link><guid isPermaLink="true">https://sebbrousse.github.io/2015/05/04/Hello.html</guid><dc:creator><![CDATA[Sebastien Brousse]]></dc:creator><pubDate>Mon, 04 May 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Hello]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_hello">Hello</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_hello_2">Hello</h3>
+<div class="paragraph">
+<p><em>italic phrase</em></p>
+</div>
+<div class="paragraph">
+<p><em>i</em>talic le<em>tt</em>ers</p>
+</div>
+<div class="paragraph">
+<p><strong>bold phrase</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>b</strong>old le<strong>tt</strong>ers</p>
+</div>
+<div class="paragraph">
+<p><strong><em>bold italic phrase</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>b</em></strong>old italic le<strong><em>tt</em></strong>ers</p>
+</div>
+<div class="paragraph">
+<p><code>monospace phrase</code> and le<code>tt</code>ers</p>
+</div>
+<div class="paragraph">
+<p><code><em>monospace italic phrase</em></code> and le<code><em>tt</em></code>ers</p>
+</div>
+<div class="paragraph">
+<p><code><strong>monospace bold phrase</strong></code> and le<code><strong>tt</strong></code>ers</p>
+</div>
+<div class="paragraph">
+<p><code><strong><em>monospace bold italic phrase</em></strong></code> and le<code><strong><em>tt</em></strong></code>ers</p>
+</div>
+</div>
+</div>
+</div>]]></description><link>https://sebbrousse.github.io/2015/05/01/Hello.html</link><guid isPermaLink="true">https://sebbrousse.github.io/2015/05/01/Hello.html</guid><dc:creator><![CDATA[Sebastien Brousse]]></dc:creator><pubDate>Fri, 01 May 2015 00:00:00 GMT</pubDate></item></channel></rss>
